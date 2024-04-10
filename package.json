@@ -1,0 +1,32 @@
+{
+  "name": "starlight-auth",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/db": "^0.6.0",
+    "@astrojs/netlify": "^5.2.0",
+    "@astrojs/node": "^8.2.5",
+    "@astrojs/starlight": "^0.21.5",
+    "@astrojs/vercel": "^7.5.0",
+    "@auth/core": "^0.27.0",
+    "@vercel/edge": "^1.1.1",
+    "astro": "^4.5.17",
+    "auth-astro": "^4.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "sharp": "^0.33.3",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "tsm": "^2.3.0"
+  }
+}

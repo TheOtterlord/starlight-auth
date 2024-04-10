@@ -1,0 +1,73 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+import StarlightPage, { type StarlightPageProps } from '@astrojs/starlight/components/StarlightPage.astro'
+import { getSession } from 'auth-astro/server'
+
+const session = await getSession(Astro.request)
+
+const frontmatter: StarlightPageProps['frontmatter'] = {
+  title: 'Welcome to Starlight',
+  template: 'splash',
+  hero: {
+    tagline: 'Congrats on setting up a new Starlight project!',
+    actions: [
+      session ? {
+        text: 'Get started',
+        link: '/guides/example/',
+        icon: 'right-arrow',
+        variant: 'primary'
+      } : {
+      text: 'Sign in',
+        link: '/auth/signin',
+        icon: 'right-arrow',
+        variant: 'primary'
+      },
+      {
+        text: 'Read the Starlight docs',
+        link: 'https://starlight.astro.build',
+        icon: 'external'
+      }
+    ]
+  }
+}
+---
+
+<StarlightPage {frontmatter}>
+  {
+    session && (
+      <sign-out>
+        <button class="action">Sign out</button>
+      </sign-out>
+    )
+  }
+</StarlightPage>
+
+<script>
+  import { signOut } from 'auth-astro/client'
+
+  class SignOut extends HTMLElement {
+    btn = this.querySelector('button')
+
+    constructor() {
+      super()
+      this.btn?.addEventListener('click', () => signOut({ prefix: '/auth' }))
+    }
+  }
+
+  customElements.define('sign-out', SignOut)
+</script>
+
+<style>
+  .action {
+		gap: 0.5em;
+		align-items: center;
+		border-radius: 1rem;
+		padding: 0.75rem 1.5rem;
+		line-height: 1.1875;
+		text-decoration: none;
+		font-size: var(--sl-text-sm);
+    font-weight: bold;
+		background: var(--sl-color-red-high);
+		color: var(--sl-color-black);
+	}
+</style>
