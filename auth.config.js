@@ -5,6 +5,7 @@ import GitHub from '@auth/core/providers/github'
  */
 export const paths = [
   '/guides',
+  '/reference',
   '/pagefind'
 ]
 
