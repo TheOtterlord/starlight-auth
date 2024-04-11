@@ -17,7 +17,7 @@ export default defineConfig({
       Search: './src/components/starlight/Search.astro'
     },
     social: {
-      github: 'https://github.com/withastro/starlight'
+      github: 'https://github.com/TheOtterlord/starlight-auth'
     },
     sidebar: [{
       label: 'Guides',
