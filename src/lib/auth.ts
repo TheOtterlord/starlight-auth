@@ -28,6 +28,12 @@ export async function getSession(req: Request, options: AuthConfig): Promise<Ses
 	throw new Error(data.message)
 }
 
+/**
+ * Check if the request is authorized.
+ * @param req The request
+ * @param options Your auth config
+ * @returns `true` if the request is authorized, `false` otherwise
+ */
 export async function isAuthed(req: Request, options: FullAuthConfig) {
   const url = new URL(req.url.pathname ?? req.url, `${process.env.DEV ? 'http' : 'https'}://${req.headers.host}`)
   if (!paths.find(p => url.pathname.startsWith(p))) return true

@@ -6,10 +6,10 @@ import { getSession } from 'auth-astro/server'
 const session = await getSession(Astro.request)
 
 const frontmatter: StarlightPageProps['frontmatter'] = {
-  title: 'Welcome to Starlight',
+  title: 'Starlight + Auth',
   template: 'splash',
   hero: {
-    tagline: 'Congrats on setting up a new Starlight project!',
+    tagline: 'A template for adding auth to your Starlight site.',
     actions: [
       session ? {
         text: 'Get started',

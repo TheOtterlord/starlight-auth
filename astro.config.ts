@@ -12,7 +12,7 @@ export default defineConfig({
   integrations: [auth({
     injectEndpoints: false
   }), starlight({
-    title: 'My Docs',
+    title: 'Starlight Auth',
     components: {
       Search: './src/components/starlight/Search.astro'
     },
