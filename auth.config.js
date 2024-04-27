@@ -1,14 +1,5 @@
 import GitHub from '@auth/core/providers/github'
 
-/**
- * An array of path prefixes to require authentication for.
- */
-export const paths = [
-  '/guides',
-  '/reference',
-  '/pagefind'
-]
-
 export default generateConfig({
 	clientId: import.meta.env?.GITHUB_CLIENT_ID,
 	clientSecret: import.meta.env?.GITHUB_CLIENT_SECRET,

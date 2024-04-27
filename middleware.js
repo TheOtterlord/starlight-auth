@@ -1,5 +1,5 @@
 import { next, rewrite } from '@vercel/edge'
-import { generateConfig, paths } from './auth.config.js'
+import { generateConfig } from './auth.config.js'
 import { isAuthed } from './src/lib/auth'
 
 export default async function middleware(request) {
