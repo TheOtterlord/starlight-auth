@@ -16,7 +16,7 @@
     "@astrojs/node": "^8.2.5",
     "@astrojs/starlight": "^0.21.5",
     "@astrojs/vercel": "^7.5.0",
-    "@auth/core": "^0.27.0",
+    "@auth/core": "^0.18.6",
     "@vercel/edge": "^1.1.1",
     "astro": "^4.5.17",
     "auth-astro": "^4.1.1",
